@@ -23,7 +23,7 @@ Um time de negócio pede análises sobre concentração de saldo, clientes premi
   Uma linha por grupo, ordenada do maior para o menor saldo.
 - **Técnicas:** `ntile`, soma acumulada com window function, CTEs encadeadas
 
-![](results/pedido_01.png)
+![](result_images/pedido_01.png)
 
 ### 2. Clientes premium por país
 - **Pedido:** uma lista dos 10 clientes com maior saldo em cada país, para a equipe comercial abordar pessoalmente. Para cada cliente, mostrar:
@@ -35,7 +35,7 @@ Um time de negócio pede análises sobre concentração de saldo, clientes premi
   Se houver empate de saldo, os empatados aparecem com a mesma posição. Organizar por país e depois por posição.
 - **Técnicas:** `dense_rank`, `lead`, `PARTITION BY`, média condicional
 
-![](results/pedido_02.png)
+![](result_images/pedido_02.png)
 
 ### 3. Maturidade por tempo de relacionamento
 - **Pedido:** saber se clientes mais antigos são mais engajados com o banco. Agrupar os clientes por anos de relacionamento (0 a 10), cada ano como um grupo. Para cada grupo, mostrar:
@@ -47,7 +47,7 @@ Um time de negócio pede análises sobre concentração de saldo, clientes premi
   Para o saldo médio e o % com 2 ou mais produtos, mostrar também a variação em relação ao ano anterior de relacionamento, em pontos absolutos. Uma linha por ano, em ordem crescente.
 - **Técnicas:** `lag`, agregações condicionais
 
-![](results/pedido_03.png)
+![](result_images/pedido_03.png)
 
 ### 4. Segmentação por faixa etária e país
 - **Pedido:** uma visão para decidir onde investir em campanhas. Criar as faixas etárias 18 a 29, 30 a 39, 40 a 49, 50 a 59 e 60 ou mais, e cruzar cada faixa com cada país. Para cada combinação de faixa e país, mostrar:
@@ -57,4 +57,4 @@ Um time de negócio pede análises sobre concentração de saldo, clientes premi
   - um índice de saldo médio em que 100 é a média geral do banco (acima de 100 está acima da média).
 - **Técnicas:** `CASE`, índice de saldo médio (base 100), `COUNT() OVER()`
 
-![](results/pedido_04.png)
+![](result_images/pedido_04.png)
